@@ -1,0 +1,53 @@
+<a class="filters-mobile" (click)="openFilters()">
+  <span class="material-icons icon">filter_alt</span> Filters
+</a>
+<div class="filters" [ngClass]="{ 'open' : filtersOpen }">
+  <div class="filter">
+    <div class="close">
+      <a (click)="closeFilters()"><span class="material-icons">clear</span></a>
+    </div>
+    <h2>Transaction type</h2>
+    <ul>
+      <li *ngFor="let item of model.types">
+        <a (click)="toggleFilter( item, true )">
+          <span class="icon">
+            <span class="material-icons" *ngIf="item.selected">check_box</span>
+            <span class="material-icons" *ngIf="!item.selected">check_box_outline_blank</span>
+          </span>
+          {{ item.label }}
+        </a>
+        <a (click)="toggleFilter( item )" class="mobile">
+          <span class="icon">
+            <span class="material-icons" *ngIf="item.selected">check_box</span>
+            <span class="material-icons" *ngIf="!item.selected">check_box_outline_blank</span>
+          </span>
+          {{ item.label }}
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="filter">
+    <h2>Categories</h2>
+    <ul>
+      <li *ngFor="let item of model.categories">
+        <a (click)="toggleFilter( item, true )">
+          <span class="icon">
+            <span class="material-icons" *ngIf="item.selected">check_box</span>
+            <span class="material-icons" *ngIf="!item.selected">check_box_outline_blank</span>
+          </span>
+          {{ item.label }}
+        </a>
+        <a (click)="toggleFilter( item )" class="mobile">
+          <span class="icon">
+            <span class="material-icons" *ngIf="item.selected">check_box</span>
+            <span class="material-icons" *ngIf="!item.selected">check_box_outline_blank</span>
+          </span>
+          {{ item.label }}
+        </a>
+      </li>
+    </ul>
+    <div class="mobile-controls">
+      <a class="btn btn-primary" (click)="applyFilters()">Apply</a>
+    </div>
+  </div>
+</div>

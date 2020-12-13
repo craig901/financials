@@ -1,0 +1,36 @@
+div.ngx-select {
+  position:relative;
+  &:focus {
+    outline:0;
+  }
+  div.ngx-select__selected:focus {
+
+  }
+  .btn {
+    display:block;
+    width:100%;
+    padding:0 15px;
+    height:40px;
+    line-height:40px;
+    font-size:18px;
+    font-family:$fontFamily;
+    color:$fontColor;
+    outline:0;
+    box-sizing:border-box;
+    border:1px solid lighten($backgroundColor,2%);
+    background:darken($backgroundColor,2%);
+    &:hover {
+      color:$fontColor;
+      border:1px solid lighten($backgroundColor,2%);
+      background:darken($backgroundColor,4%);
+    }
+  }
+  ul {
+    background:$backgroundColor;
+    li {
+      a {
+        color:$fontColor;
+      }
+    }
+  }
+}

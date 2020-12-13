@@ -1,0 +1,23 @@
+form.submit-transaction-form {
+  padding:30px 0;
+}
+
+div.filters {
+  float: left;
+  width: 200px;
+}
+
+div.items {
+  float:right;
+  width:calc( 100% - 220px );
+  div.items-top {
+    padding:0 0 30px 0;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  div.filters, div.items {
+    float:none;
+    width:auto;
+  }
+}

@@ -1,0 +1,37 @@
+div#sidebar {
+  position:fixed;
+  left:0;
+  top:50px;
+  bottom:0;
+  padding:20px;
+  width:250px;
+  box-sizing:border-box;
+  background:darken(#252729,1%);
+  ul {
+    li {
+      list-style:none;
+      a {
+        display:block;
+        padding:0 10px;
+        line-height:50px;
+        font-size:20px;
+        font-weight:400;
+        color:#969c9e;
+        text-decoration:none;
+        @include transitionAllQuick();
+        &:hover {
+          color:#d66a7d;
+          background:lighten(#252729,5%);
+        }
+        span.icon {
+          display:inline-block;
+          width:35px;
+          span.material-icons {
+            position:relative;
+            top:4px;
+          }
+        }
+      }
+    }
+  }
+}

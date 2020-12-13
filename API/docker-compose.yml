@@ -1,0 +1,57 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: craig
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: financials-docker
+    container_name: financials-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./src:/var/www
+      - ./docker-compose/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - financials
+
+  db:
+    image: mysql:5.7
+    container_name: financials-db
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: financials
+      MYSQL_ROOT_PASSWORD: abc123
+      MYSQL_PASSWORD: abc123
+      MYSQL_USER: craig
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - financials-db-data:/var/lib/mysql:rw
+    networks:
+      - financials
+
+  nginx:
+    image: nginx:alpine
+    container_name: financials-nginx
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - ./src:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d
+    networks:
+      - financials
+
+networks:
+  financials:
+    driver: bridge
+
+#Volumes
+volumes:
+  financials-db-data:
+    driver: local

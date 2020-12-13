@@ -1,0 +1,33 @@
+<header>
+  <div class="logo">My Financials App</div>
+
+  <div id="menu-toggle">
+    <div id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div id="cross">
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+</header>
+
+<nav role='navigation' class="" id="nav">
+  <ul>
+    <li>
+      <a [routerLink]="['/dashboard']" (click)="clicked()">Dashboard</a>
+    </li>
+    <li>
+      <a [routerLink]="['/transactions']" (click)="clicked()">Transactions</a>
+    </li>
+    <li>
+      <a [routerLink]="['/transactions/create']" (click)="clicked()">Submit transaction</a>
+    </li>
+    <li>
+      <a [routerLink]="" (click)="logout()">Log out</a>
+    </li>
+  </ul>
+</nav>

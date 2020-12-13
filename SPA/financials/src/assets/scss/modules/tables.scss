@@ -1,0 +1,44 @@
+div.table-responsive {
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+table.table {
+  table-layout:fixed;
+  width:100%;
+  margin:0 0 25px 0;
+  white-space:nowrap;
+  border-collapse:collapse;
+  thead {
+    tr {
+      border-bottom:2px solid lighten($backgroundColor,8%);
+      th {
+        padding: 15px 20px;
+        font-size:16px;
+        text-align:left;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
+    }
+  }
+  tbody {
+    tr {
+
+      &:nth-of-type(even) {
+        background: lighten($backgroundColor,4%);
+      }
+
+      td {
+        padding: 15px 20px;
+        font-size: 16px;
+        font-weight: 300;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}

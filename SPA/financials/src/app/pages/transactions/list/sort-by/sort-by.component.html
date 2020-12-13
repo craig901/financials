@@ -1,0 +1,6 @@
+<div class="sort-by">
+  <span (click)="toggleFilters()">Sort by: {{ label }} <span class="material-icons">arrow_drop_down</span></span>
+  <ul [ngClass]="{ 'open' : sortByOpen }">
+    <li *ngFor="let item of model.sortOptions"><a (click)="applySort(item)">{{ item.label }}</a></li>
+  </ul>
+</div>

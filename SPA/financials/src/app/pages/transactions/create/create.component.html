@@ -1,0 +1,56 @@
+<app-card [title]="'Submit a transaction'">
+
+  <div *ngIf="( viewModel$ | async ) as model">
+    <form class="form submit-transaction-form" [formGroup]="form" (submit)="submit()">
+
+      <app-form-group [title]="'Description'" [for]="'description'" [required]="true">
+        <input class="form-control"
+               name="description"
+               id="description"
+               type="text"
+               autocomplete="off"
+               formControlName="description">
+      </app-form-group>
+
+      <app-form-group [title]="'Type'" [for]="'type'" [required]="true">
+        <select id="type" formControlName="type">
+          <option value="">Please select</option>
+          <option *ngFor="let item of model.types" value="{{ item.id }}">{{ item.label }}</option>
+        </select>
+      </app-form-group>
+
+      <app-form-group [title]="'Category'" [for]="'category'" [required]="true">
+        <select id="category" formControlName="category">
+          <option value="">Please select</option>
+          <option *ngFor="let item of model.categories" value="{{ item.id }}">{{ item.label }}</option>
+        </select>
+      </app-form-group>
+
+      <app-form-group [title]="'Value'" [for]="'value'" [required]="true">
+        <input class="form-control"
+               name="value"
+               id="value"
+               type="text"
+               autocomplete="off"
+               formControlName="value">
+      </app-form-group>
+
+      <app-form-group [title]="'Date'" [for]="'date'" [required]="true">
+        <input class="form-control"
+               name="date"
+               id="date"
+               type="text"
+               autocomplete="off"
+               [matDatepicker]="basicDatepicker"
+               (focus)="basicDatepicker.open()"
+               formControlName="date">
+        <mat-datepicker #basicDatepicker></mat-datepicker>
+      </app-form-group>
+
+      <div class="row">
+        <button class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+
+</app-card>

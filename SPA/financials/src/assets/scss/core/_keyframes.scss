@@ -1,0 +1,23 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -50px, 0);
+  }
+  50% {
+    opacity: 0;
+    transform: translate3d(0, -50px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+
+  //0%   {background-color:red; left:0px; top:0px;}
+  //25%  {background-color:yellow; left:200px; top:0px;}
+  //50%  {background-color:blue; left:200px; top:200px;}
+  //75%  {background-color:green; left:0px; top:200px;}
+  //100% {background-color:red; left:0px; top:0px;}
+}
+.fadeIn {
+  animation-name: fadeIn;
+}

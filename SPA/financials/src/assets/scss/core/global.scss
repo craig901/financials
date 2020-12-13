@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+* {
+  margin:0;
+  padding:0;
+}
+body {
+  color:$fontColor;
+  font-family:$fontFamily;
+  background:$backgroundColor;
+}
+input, select, textarea {
+  font-family:$fontFamily;
+  color:$fontColor;
+}
+main {
+  padding:90px 20px 20px 20px;
+}
+.cf:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+@media only screen and (max-width: 600px) {
+  main {
+    padding:70px 0 0 0;
+  }
+}

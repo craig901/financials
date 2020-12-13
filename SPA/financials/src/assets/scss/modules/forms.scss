@@ -1,0 +1,77 @@
+form.form {
+  max-width:600px;
+  margin:0 auto;
+  div.row {
+    padding:0 0 20px 0;
+    &:after {
+      @include clearFix();
+    }
+    label {
+      float:left;
+      width:33%;
+      padding:0 20px;
+      display:block;
+      height:40px;
+      line-height:40px;
+      font-size:18px;
+      text-align:right;
+      box-sizing:border-box;
+    }
+    div.field {
+      float:right;
+      width:67%;
+      span.text-danger {
+        display:block;
+        padding:10px 0 0 0;
+        color:#d4737c;
+      }
+    }
+    input, select {
+      display:block;
+      width:100%;
+      padding:0 15px;
+      height:40px;
+      line-height:40px;
+      font-size:18px;
+      outline:0;
+      box-sizing:border-box;
+      border:1px solid lighten($backgroundColor,2%);
+      background:darken($backgroundColor,2%);
+    }
+    div.error {
+      padding:15px 0;
+      color:#cf616b;
+      font-size:16px;
+    }
+    &.row-submit {
+      text-align: center;
+    }
+    button {
+      display:block;
+      width:150px;
+      margin-left:33%;
+    }
+  }
+  .btn {
+    margin:0 auto;
+  }
+}
+@media only screen and (max-width: 600px) {
+  form.form {
+    div.row {
+      label {
+        float:none;
+        width:auto;
+        padding:0 0 10px 0;
+        text-align:left;
+      }
+      div.field {
+        float:none;
+        width:auto;
+      }
+      button {
+        margin-left:0;
+      }
+    }
+  }
+}

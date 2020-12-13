@@ -1,0 +1,45 @@
+div.auth-container {
+  display:flex;
+  height:100vh;
+  align-items:center;
+  justify-content:center;
+  div.auth-box {
+    width:400px;
+    margin:0 auto;
+    div.card-header{
+      h4 {
+        font-size:28px;
+        text-align:center;
+        font-weight:300;
+      }
+    }
+    div.row {
+      label {
+        display:block;
+        width:auto;
+        text-align:left;
+        padding:0 0 10px 0;
+      }
+      input {
+        background-color:$backgroundColor;
+        //background-image: none !important;
+        //padding-right:0 !important;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  div.auth-container {
+    div.auth-box {
+      div.card {
+        background:none;
+        box-shadow: none;
+      }
+      div.row {
+        input {
+          background-color:lighten($backgroundColor, 5%);
+        }
+      }
+    }
+  }
+}

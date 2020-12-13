@@ -1,0 +1,51 @@
+<app-card [title]="'My dashboard'">
+
+  <div class="loading" *ngIf="!column">
+    <span>Loading data</span>
+  </div>
+
+  <div class="dashboard">
+    <div class="cols cf">
+      <div class="col col-pie">
+        <apx-chart *ngIf="pie"
+           [dataLabels]="pie.dataLabels"
+                   [legend]="pie.legend"
+          [series]="pie.series"
+          [chart]="pie.chart"
+          [labels]="pie.labels"
+          [responsive]="pie.responsive"
+          [colors]="pie.colors"
+        ></apx-chart>
+      </div>
+      <div class="col col-column">
+        <apx-chart *ngIf="columnCurrentMonth"
+                   [legend]="columnCurrentMonth.legend"
+                   [dataLabels]="columnCurrentMonth.dataLabels"
+                   [series]="columnCurrentMonth.series"
+                   [chart]="columnCurrentMonth.chart"
+                   [xaxis]="columnCurrentMonth.xaxis"
+                   [yaxis]="columnCurrentMonth.yaxis"
+                   [title]="columnCurrentMonth.title"
+                   [responsive]="columnCurrentMonth.responsive"
+                   [colors]="columnCurrentMonth.colors"
+        ></apx-chart>
+      </div>
+    </div>
+    <div class="row">
+      <apx-chart *ngIf="column"
+                 [legend]="column.legend"
+                 [dataLabels]="column.dataLabels"
+                 [series]="column.series"
+                 [chart]="column.chart"
+                 [xaxis]="column.xaxis"
+                 [yaxis]="column.yaxis"
+                 [title]="column.title"
+                 [responsive]="column.responsive"
+                 [colors]="column.colors"
+      ></apx-chart>
+    </div>
+  </div>
+
+
+
+</app-card>

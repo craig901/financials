@@ -1,0 +1,10 @@
+<div class="form-group row" [class.has-error]="hasError">
+  <label [for]="for" class="col-sm-3 col-form-label">
+    <span class="required" *ngIf="required"><span>*</span>&nbsp;</span>{{ title }}
+  </label>
+  <div class="field">
+    <ng-content></ng-content>
+  </div>
+</div>
+
+

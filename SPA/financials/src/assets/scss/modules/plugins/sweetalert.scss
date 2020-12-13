@@ -1,0 +1,8 @@
+div.swal2-container {
+  .swal2-styled {
+    //background:
+    &:focus {
+      box-shadow:none;
+    }
+  }
+}
